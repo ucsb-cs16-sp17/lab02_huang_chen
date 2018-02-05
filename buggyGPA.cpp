@@ -8,16 +8,19 @@ double calculateGPA(int numCourses, double* courseGrades);
 
 int main(int argc, char* argv[])
 {
-  
+  if (argc%2==0){
+	  cout<<"Usage: ./buggy course letterGrade"<<endl;
+	  return 0;
+  }
   string courseNames[5];
   double courseGrades[5];
   string courseLetterGrades[5];
   int numCourses = int(argc/2);
 
-  for (int i = 1; i< argc; i=i+2 ){
-    courseNames[i-1] = string(argv[i]);
-    courseLetterGrades[i-1] = string(argv[i+1]);
-    cout<<courseNames[i-1] << "   "<<courseLetterGrades[i-1]<<endl;
+  for (int i = 1; i+1< argc; i=i+2 ){
+    courseNames[(i-1)/2] = string(argv[i]);
+    courseLetterGrades[(i-1)/2] = string(argv[i+1]);
+    cout<<courseNames[(i-1)/2] << "   "<<courseLetterGrades[(i-1)/2]<<endl;
   }
 
   assignCourseGrade(numCourses, courseLetterGrades, courseGrades );
