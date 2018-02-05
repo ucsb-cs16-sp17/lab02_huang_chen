@@ -9,7 +9,7 @@ double calculateGPA(int numCourses, double* courseGrades);
 int main(int argc, char* argv[])
 {
   if (argc%2==0){
-	  cout<<"Usage: ./buggy course letterGrade"<<endl;
+	  cerr<<"Usage: "<<argv[0]<<" course letterGrade"<<endl;
 	  return 0;
   }
   string courseNames[5];
